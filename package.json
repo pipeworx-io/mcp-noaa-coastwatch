@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-noaa-coastwatch",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "NOAA CoastWatch — satellite and model ocean data via ERDDAP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-noaa-coastwatch": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "noaa-coastwatch"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-noaa-coastwatch.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/noaa-coastwatch",
   "pipeworx": {
-    "sourceHash": "v1-f22fe1dd4fec620c82e31cd1450dc7fba3f4bd2f1da4cdc4f0660775aa1aa4e5",
-    "sourceCommit": "774de7f685a75e02d0b828d24a7b94794102152c"
+    "mode": "gateway",
+    "slug": "noaa-coastwatch",
+    "gatewaySlug": "noaa-coastwatch",
+    "sourceHash": "v1-aa7e92565111c72472d9c80d6db3d42e44d81c3a904f0491df74d7ee29a011ab",
+    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
   }
 }
